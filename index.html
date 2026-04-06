@@ -59,10 +59,10 @@
           </p>
 
           <div class="category-grid">
-            <a href="dresses.html" class="category-card" aria-label="Для девочек — каталог">
+            <article class="category-card">
               <img
                 src="images/dress-icon-girl.png"
-                alt=""
+                alt="Для девочек"
                 class="category-icon"
                 width="120"
                 height="120"
@@ -72,21 +72,21 @@
               <p class="category-card-text">Платья, блузки, юбки и другие модели для девочек</p>
               <ul class="category-sublist">
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="dresses.html">Платья</span>
+                  <a href="dresses.html">Платья</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="skirts.html">Юбки</span>
+                  <a href="skirts.html">Юбки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="longsleeves.html">Лонгсливы</span>
+                  <a href="longsleeves.html">Лонгсливы</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="blouses.html">Блузки</span>
+                  <a href="blouses.html">Блузки</a>
                 </li>
               </ul>
-            </a>
+            </article>
 
-            <a href="hoodies.html" class="category-card" aria-label="Для мальчиков — каталог">
+            <article class="category-card">
               <img
                 src="images/hoodie-icon-boy.png"
                 alt="Для мальчиков"
@@ -99,21 +99,21 @@
               <p class="category-card-text">Рубашки, брюки, худи и удобные повседневные модели</p>
               <ul class="category-sublist">
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="shirts.html">Рубашки</span>
+                  <a href="shirts.html">Рубашки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="pants.html">Брюки</span>
+                  <a href="pants.html">Брюки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="hoodies.html">Худи</span>
+                  <a href="hoodies.html">Худи</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="tshirts.html">Футболки</span>
+                  <a href="tshirts.html">Футболки</a>
                 </li>
               </ul>
-            </a>
+            </article>
 
-            <a href="accessories-misc.html" class="category-card" aria-label="Аксессуары — каталог">
+            <article class="category-card">
               <img
                 src="images/bag-icon-accessories.png"
                 alt="Аксессуары"
@@ -126,21 +126,21 @@
               <p class="category-card-text">Быстрые и простые проекты, с которых удобно начать</p>
               <ul class="category-sublist">
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="hats.html">Шапки</span>
+                  <a href="hats.html">Шапки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="bags.html">Сумки</span>
+                  <a href="bags.html">Сумки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="headbands.html">Повязки</span>
+                  <a href="headbands.html">Повязки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="accessories-misc.html">Прочее</span>
+                  <a href="accessories-misc.html">Прочее</a>
                 </li>
               </ul>
-            </a>
+            </article>
 
-            <a href="free-dresses.html" class="category-card" aria-label="Бесплатные выкройки — каталог">
+            <article class="category-card">
               <img
                 src="images/pattern-icon-free.png"
                 alt="Бесплатные выкройки"
@@ -153,19 +153,19 @@
               <p class="category-card-text">Попробуйте формат и начните знакомство с бесплатных моделей</p>
               <ul class="category-sublist">
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="free-dresses.html">Платья</span>
+                  <a href="free-dresses.html">Платья</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="free-tshirts.html">Футболки</span>
+                  <a href="free-tshirts.html">Футболки</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="free-accessories.html">Аксессуары</span>
+                  <a href="free-accessories.html">Аксессуары</a>
                 </li>
                 <li>
-                  <span class="category-sublist-link" tabindex="0" data-href="free-misc.html">Разное</span>
+                  <a href="free-misc.html">Разное</a>
                 </li>
               </ul>
-            </a>
+            </article>
           </div>
         </div>
       </section>
@@ -255,36 +255,5 @@
         <p>&copy; 2026 KidsPatterns. Все права защищены.</p>
       </div>
     </footer>
-
-    <script>
-      (function () {
-        var grid = document.querySelector("#patterns .category-grid");
-        if (!grid) return;
-        var cards = grid.querySelectorAll("a.category-card");
-        function goPill(e, pill) {
-          e.preventDefault();
-          e.stopPropagation();
-          var href = pill.getAttribute("data-href");
-          if (e.ctrlKey || e.metaKey) {
-            window.open(href, "_blank", "noopener");
-          } else {
-            window.location.href = href;
-          }
-        }
-        cards.forEach(function (card) {
-          card.addEventListener("click", function (e) {
-            var pill = e.target.closest(".category-sublist-link");
-            if (!pill || !card.contains(pill) || !pill.getAttribute("data-href")) return;
-            goPill(e, pill);
-          });
-          card.addEventListener("keydown", function (e) {
-            if (e.key !== "Enter" && e.key !== " ") return;
-            var pill = e.target.closest(".category-sublist-link");
-            if (!pill || !card.contains(pill) || !pill.getAttribute("data-href")) return;
-            goPill(e, pill);
-          });
-        });
-      })();
-    </script>
   </body>
 </html>

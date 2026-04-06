@@ -330,19 +330,10 @@ main {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-a.category-card {
-  display: block;
-}
-
 .category-card:hover {
   transform: translateY(-4px);
   border-color: rgba(125, 165, 166, 0.28);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.07);
-}
-
-a.category-card:focus-visible {
-  outline: 3px solid rgba(125, 165, 166, 0.35);
-  outline-offset: 3px;
 }
 
 img.category-icon {
