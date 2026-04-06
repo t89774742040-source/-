@@ -45,11 +45,21 @@ body {
   background-color: var(--bg);
 }
 
+img,
+svg {
+  max-width: 100%;
+}
+
 /* Лёгкая “бумажная” фактура без резких эффектов */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   opacity: 0.08;
   background-image:
@@ -1072,10 +1082,41 @@ div.category-icon img {
    ========== */
 
 @media (max-width: 600px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .site-header .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
   .header-content {
+    padding: 12px 0;
+    gap: 10px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+  }
+
+  .logo {
+    padding-left: 2px;
+  }
+
+  .logo-image {
+    height: 40px;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
   }
 
   .main-nav ul {
@@ -1083,17 +1124,53 @@ div.category-icon img {
   }
 
   .hero h1 {
-    font-size: 2.1rem;
+    font-size: 1.95rem;
+    line-height: 1.08;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    border-radius: 14px;
   }
 
   .hero {
-    padding: 40px 0;
+    padding: 22px 0 28px;
     min-height: auto; /* на маленьких экранах высота "по контенту" */
+  }
+
+  .hero-image {
+    height: 240px;
+  }
+
+  main {
+    padding: 12px 0 28px;
   }
 }
 
 /* Адаптация для планшетов и телефонов */
 @media (max-width: 768px) {
+  .header-content {
+    padding: 14px 0;
+  }
+
+  .logo-image {
+    height: 48px;
+  }
+
+  .main-nav ul {
+    gap: 14px;
+  }
+
+  .main-nav a {
+    font-size: 0.92rem;
+  }
+
   .hero-inner {
     flex-direction: column;
   }
@@ -1108,7 +1185,7 @@ div.category-icon img {
 
   .hero-image {
     width: 100%;
-    height: 340px;
+    height: 300px;
     border-radius: 16px;
   }
 
@@ -1120,8 +1197,86 @@ div.category-icon img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .categories {
+    padding: 36px 0 28px;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+  }
+
+  .category-card {
+    padding: 18px;
+  }
+
+  img.category-icon {
+    width: 104px;
+    height: 104px;
+    margin: 0 auto 12px;
+  }
+
+  .category-card-title {
+    font-size: 1.02rem;
+  }
+
+  .category-card-text {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .category-sublist {
+    margin-top: 12px;
+    gap: 8px 10px;
+  }
+
+  .category-sublist a,
+  .category-sublist a:visited,
+  .category-sublist .category-sublist-link {
+    padding: 8px 10px;
+    font-size: 0.88rem;
+  }
+
   .popular-patterns-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popular-patterns {
+    padding: 28px 0;
+  }
+
+  .popular-patterns-grid {
+    gap: 14px;
+  }
+
+  .popular-patterns .dress-product-title {
+    margin: 9px 12px 1px;
+  }
+
+  .popular-patterns .dress-product-price {
+    margin: 6px 12px 10px;
+  }
+
+  .popular-patterns .dress-product-title {
+    font-size: 0.9rem;
+    margin: 10px 12px 2px;
+  }
+
+  .popular-patterns .dress-product-price {
+    font-size: 0.84rem;
+    margin: 7px 12px 12px;
+  }
+
+  .popular-patterns-badge {
+    top: 8px;
+    left: 8px;
+    font-size: 0.68rem;
+    padding: 4px 8px;
   }
 
   .catalog-stub-grid {
@@ -1141,6 +1296,29 @@ div.category-icon img {
   .pdp-add-btn {
     max-width: none;
   }
+
+  .final-cta {
+    padding: 36px 0;
+  }
+
+  .final-cta-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .final-cta-text {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  .final-cta-button {
+    padding: 12px 20px;
+    border-radius: 14px;
+  }
+
+  .contacts {
+    padding: 18px 0;
+  }
 }
 
 /* Телефон: 1 карточка в ряд (должно быть ниже правила 768px) */
@@ -1153,6 +1331,61 @@ div.category-icon img {
     grid-template-columns: 1fr;
   }
 
+  .category-grid {
+    gap: 16px;
+  }
+
+  .category-card {
+    padding: 16px;
+  }
+
+  img.category-icon {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 12px;
+  }
+
+  .popular-patterns .dress-product-media {
+    aspect-ratio: 3 / 4;
+  }
+
+  .popular-patterns .dress-product-title {
+    font-size: 0.9rem;
+    margin: 9px 12px 1px;
+  }
+
+  .popular-patterns .dress-product-price {
+    font-size: 0.84rem;
+    margin: 6px 12px 10px;
+  }
+
+  .final-cta {
+    padding: 30px 0;
+  }
+
+  .final-cta-title {
+    font-size: 1.45rem;
+    line-height: 1.2;
+  }
+
+  .final-cta .container {
+    text-align: left;
+  }
+
+  .final-cta-button {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .contacts h2 {
+    font-size: 1.25rem;
+  }
+
+  .site-footer {
+    padding: 14px 0;
+    font-size: 0.82rem;
+  }
+
   .catalog-stub-grid {
     grid-template-columns: 1fr;
   }
@@ -1160,5 +1393,37 @@ div.category-icon img {
   .dresses-catalog-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 1.7rem;
+    line-height: 1.06;
+  }
+
+  .main-nav a {
+    font-size: 0.88rem;
+  }
+
+  .hero-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    width: 100vw;
+    height: 100vh;
+    mix-blend-mode: normal;
+  }
+
+  .site-header {
+    backdrop-filter: none;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
   }
 }
