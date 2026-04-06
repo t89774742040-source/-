@@ -324,10 +324,14 @@ main {
   border: 1px solid rgba(47, 47, 47, 0.08);
   border-radius: 20px;
   padding: 22px;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.category-card {
+  display: block;
 }
 
 .category-card:hover {
@@ -336,12 +340,43 @@ main {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.07);
 }
 
-.category-media {
-  height: 100px;
-  border-radius: 14px;
-  background: #f6ede5;
+a.category-card:focus-visible {
+  outline: 3px solid rgba(125, 165, 166, 0.35);
+  outline-offset: 3px;
+}
+
+img.category-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+div.category-icon {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 16px;
+  background: #efeae4;
   margin-bottom: 14px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+div.category-icon img {
+  width: 60%;
+  height: auto;
+  max-height: 60%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover div.category-icon img {
+  transform: scale(1.08);
 }
 
 .category-card-title {
@@ -393,7 +428,8 @@ main {
 }
 
 .category-sublist a,
-.category-sublist a:visited {
+.category-sublist a:visited,
+.category-sublist .category-sublist-link {
   display: block;
   padding: 8px 10px;
   border-radius: 10px;
@@ -403,9 +439,12 @@ main {
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(47, 47, 47, 0.06);
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-.category-sublist a:hover {
+.category-sublist a:hover,
+.category-sublist .category-sublist-link:hover {
   color: var(--accent);
   border-color: rgba(125, 165, 166, 0.35);
   background: rgba(125, 165, 166, 0.08);
@@ -413,7 +452,8 @@ main {
   text-underline-offset: 3px;
 }
 
-.category-sublist a:focus-visible {
+.category-sublist a:focus-visible,
+.category-sublist .category-sublist-link:focus-visible {
   outline: 2px solid rgba(125, 165, 166, 0.45);
   outline-offset: 2px;
 }
@@ -422,6 +462,15 @@ main {
   .category-sublist li {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .category-card,
+  .category-card:hover {
+    transform: none;
+  }
+
+  .category-card:hover div.category-icon img {
     transform: none;
   }
 }
