@@ -664,7 +664,7 @@ main {
 .popular-patterns .dress-product-title {
   font-size: 0.9rem;
   line-height: 1.3;
-  margin: 10px 12px 4px;
+  margin: 10px 12px 2px;
   font-weight: 520;
   color: rgba(47, 47, 47, 0.78);
   letter-spacing: 0.01em;
@@ -691,10 +691,10 @@ main {
 }
 
 .popular-patterns .dress-product-price {
-  font-size: 0.84rem;
-  font-weight: 560;
-  margin: 0 12px 12px;
-  color: rgba(91, 91, 91, 0.95);
+  font-size: 0.85rem;
+  font-weight: 620;
+  margin: 8px 12px 12px;
+  color: rgba(47, 47, 47, 0.9);
   letter-spacing: 0.01em;
 }
 
