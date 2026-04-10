@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Выкройки детской одежды</title>
+    <!-- Подключаем файл со стилями -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Шапка сайта: логотип и простое меню -->
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="logo">
+          <img src="images/logo.png" alt="ЛОРИ" class="logo-image" />
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <!-- Пока ссылки ведут только на секции этой же страницы -->
+            <li><a href="#about">О сайте</a></li>
+            <li><a href="#patterns">Выкройки</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html" class="header-cart" aria-label="Корзина">
+          <span class="header-cart-icon" aria-hidden="true">🛒</span>
+          <span class="header-cart-count" id="headerCartCount">0</span>
+        </a>      </div>
+    </header>
+
+    <!-- Основное содержимое страницы -->
+    <main>
+      <!-- HERO-блок: главный экран сайта -->
+      <section class="hero" id="about">
+        <div class="container">
+          <div class="hero-inner">
+            <!-- Левая колонка: текст -->
+            <div class="hero-content">
+              <h1>Выкройки, по которым действительно получается</h1>
+              <p class="hero-subtitle">
+                Пошаговые инструкции и понятный процесс — даже если вы только начинаете шить
+              </p>
+              <a class="btn btn-primary" href="#patterns">Смотреть выкройки</a>
+            </div>
+
+            <!-- Правая колонка: крупный визуальный блок -->
+            <div class="hero-visual">
+              <div class="hero-image">
+                <img src="hero.jpg" alt="Детская одежда на вешалке" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Категории: следующий блок после hero -->
+      <section class="categories" id="patterns">
+        <div class="container">
+          <h2 class="section-title">Выберите, с чего начать</h2>
+          <p class="section-subtitle">
+            Подберите раздел и начните с того, что ближе именно вам
+          </p>
+
+          <div class="category-grid">
+            <article class="category-card">
+              <img
+                src="images/dress-icon-girl.png"
+                alt="Для девочек"
+                class="category-icon"
+                width="120"
+                height="120"
+                decoding="async"
+              />
+              <h3 class="category-card-title">Для девочек</h3>
+              <p class="category-card-text">Платья, блузки, юбки и другие модели для девочек</p>
+              <ul class="category-sublist">
+                <li>
+                  <a href="dresses.html">Платья</a>
+                </li>
+                <li>
+                  <a href="skirts.html">Юбки</a>
+                </li>
+                <li>
+                  <a href="longsleeves.html">Лонгсливы</a>
+                </li>
+                <li>
+                  <a href="blouses.html">Блузки</a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="category-card">
+              <img
+                src="images/hoodie-icon-boy.png"
+                alt="Для мальчиков"
+                class="category-icon"
+                width="120"
+                height="120"
+                decoding="async"
+              />
+              <h3 class="category-card-title">Для мальчиков</h3>
+              <p class="category-card-text">Рубашки, брюки, худи и удобные повседневные модели</p>
+              <ul class="category-sublist">
+                <li>
+                  <a href="shirts.html">Рубашки</a>
+                </li>
+                <li>
+                  <a href="pants.html">Брюки</a>
+                </li>
+                <li>
+                  <a href="hoodies.html">Худи</a>
+                </li>
+                <li>
+                  <a href="tshirts.html">Футболки</a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="category-card">
+              <img
+                src="images/bag-icon-accessories.png"
+                alt="Аксессуары"
+                class="category-icon"
+                width="120"
+                height="120"
+                decoding="async"
+              />
+              <h3 class="category-card-title">Аксессуары</h3>
+              <p class="category-card-text">Быстрые и простые проекты, с которых удобно начать</p>
+              <ul class="category-sublist">
+                <li>
+                  <a href="hats.html">Шапки</a>
+                </li>
+                <li>
+                  <a href="bags.html">Сумки</a>
+                </li>
+                <li>
+                  <a href="headbands.html">Повязки</a>
+                </li>
+                <li>
+                  <a href="accessories-misc.html">Прочее</a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="category-card">
+              <img
+                src="images/pattern-icon-free.png"
+                alt="Бесплатные выкройки"
+                class="category-icon"
+                width="120"
+                height="120"
+                decoding="async"
+              />
+              <h3 class="category-card-title">Бесплатные выкройки</h3>
+              <p class="category-card-text">Попробуйте формат и начните знакомство с бесплатных моделей</p>
+              <ul class="category-sublist">
+                <li>
+                  <a href="free-dresses.html">Платья</a>
+                </li>
+                <li>
+                  <a href="free-tshirts.html">Футболки</a>
+                </li>
+                <li>
+                  <a href="free-accessories.html">Аксессуары</a>
+                </li>
+                <li>
+                  <a href="free-misc.html">Разное</a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Популярные выкройки: блок после categories -->
+      <section class="popular-patterns">
+        <div class="container">
+          <h2 class="section-title">Популярные выкройки</h2>
+          <p class="section-subtitle">
+            То, с чего чаще всего начинают — и успешно шьют с первого раза
+          </p>
+
+          <div class="popular-patterns-grid">
+            <a
+              class="dress-product-card dress-product-card--link"
+              href="product-platie.html"
+              aria-label="Платье — страница товара"
+            >
+              <div class="dress-product-media" aria-hidden="true">
+                <span class="popular-patterns-badge">Хит</span>
+              </div>
+              <h2 class="dress-product-title">Платье</h2>
+              <p class="dress-product-price">от 490 ₽</p>
+            </a>
+
+            <a
+              class="dress-product-card dress-product-card--link"
+              href="product-rubashka.html"
+              aria-label="Рубашка — страница товара"
+            >
+              <div class="dress-product-media" aria-hidden="true">
+                <span class="popular-patterns-badge">Хит</span>
+              </div>
+              <h2 class="dress-product-title">Рубашка</h2>
+              <p class="dress-product-price">от 390 ₽</p>
+            </a>
+
+            <a
+              class="dress-product-card dress-product-card--link"
+              href="product-longsliv.html"
+              aria-label="Лонгслив — страница товара"
+            >
+              <div class="dress-product-media" aria-hidden="true"></div>
+              <h2 class="dress-product-title">Лонгслив</h2>
+              <p class="dress-product-price">от 290 ₽</p>
+            </a>
+
+            <a
+              class="dress-product-card dress-product-card--link"
+              href="product-kurtka.html"
+              aria-label="Куртка — страница товара"
+            >
+              <div class="dress-product-media" aria-hidden="true"></div>
+              <h2 class="dress-product-title">Куртка</h2>
+              <p class="dress-product-price">от 590 ₽</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Финальный призыв -->
+      <section class="final-cta">
+        <div class="container">
+          <h2 class="final-cta-title">Начните с простой выкройки уже сегодня</h2>
+          <p class="final-cta-text">
+            Выберите модель и попробуйте — это проще, чем кажется
+          </p>
+          <a class="final-cta-button" href="#patterns">Перейти к выкройкам</a>
+        </div>
+      </section>
+
+      <!-- Третий блок: простая секция контактов -->
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <h2>Контакты</h2>
+          <p>
+            Здесь можно будет указать контакты, ссылки на соцсети или форму
+            обратной связи.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 KidsPatterns. Все права защищены.</p>
+      </div>
+    </footer>
+      <script src="cart.js"></script>
+  </body>
+</html>

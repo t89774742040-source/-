@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лонгсливы — каталог</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="ЛОРИ" class="logo-image" /></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html#about">О сайте</a></li>
+            <li><a href="index.html#patterns">Выкройки</a></li>
+            <li><a href="index.html#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html" class="header-cart" aria-label="Корзина">
+          <span class="header-cart-icon" aria-hidden="true">🛒</span>
+          <span class="header-cart-count" id="headerCartCount">0</span>
+        </a>      </div>
+    </header>
+
+    <main class="category-page dresses-page">
+      <div class="container">
+        <p class="category-back">
+          <a href="index.html#patterns">← Назад к категориям</a>
+        </p>
+        <h1 class="category-page-title">Лонгсливы</h1>
+        <p class="category-page-lead">
+          Удобные лонгсливы с длинным рукавом — основа детского гардероба.
+        </p>
+
+        <div class="dresses-catalog-grid">
+          <a
+            href="product-longsleeve-klassika.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Лонгслив «Классика»"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Лонгслив «Классика»</h2>
+            <p class="dress-product-price">440 ₽</p>
+          </a>
+
+          <a
+            href="product-longsleeve-sport.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Лонгслив «Спорт»"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Лонгслив «Спорт»</h2>
+            <p class="dress-product-price">420 ₽</p>
+          </a>
+
+          <a
+            href="product-longsleeve-hood.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Лонгслив с капюшоном"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Лонгслив с капюшоном</h2>
+            <p class="dress-product-price">480 ₽</p>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 KidsPatterns. Все права защищены.</p>
+      </div>
+    </footer>
+      <script src="cart.js"></script>
+  </body>
+</html>

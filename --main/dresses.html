@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Платья — каталог</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="ЛОРИ" class="logo-image" /></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html#about">О сайте</a></li>
+            <li><a href="index.html#patterns">Выкройки</a></li>
+            <li><a href="index.html#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html" class="header-cart" aria-label="Корзина">
+          <span class="header-cart-icon" aria-hidden="true">🛒</span>
+          <span class="header-cart-count" id="headerCartCount">0</span>
+        </a>      </div>
+    </header>
+
+    <main class="category-page dresses-page">
+      <div class="container">
+        <p class="category-back">
+          <a href="index.html#patterns">← Назад к категориям</a>
+        </p>
+        <h1 class="category-page-title">Платья</h1>
+        <p class="category-page-lead">
+          Нежные и удобные выкройки платьев для девочек — на каждый день и для особых случаев.
+        </p>
+
+        <div class="dresses-catalog-grid">
+          <a
+            href="product-dress-lilia.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Платье «Лилия» — подробнее"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Платье «Лилия»</h2>
+            <p class="dress-product-price">490 ₽</p>
+          </a>
+
+          <a
+            href="product-sarafan-romashka.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Сарафан «Ромашка»"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Сарафан «Ромашка»</h2>
+            <p class="dress-product-price">450 ₽</p>
+          </a>
+
+          <a
+            href="product-dress-nezhnost.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Платье «Нежность»"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Платье «Нежность»</h2>
+            <p class="dress-product-price">550 ₽</p>
+          </a>
+
+          <a
+            href="product-dress-baza.html"
+            class="dress-product-card dress-product-card--link"
+            aria-label="Платье А-силуэта «База»"
+          >
+            <div class="dress-product-media" aria-hidden="true"></div>
+            <h2 class="dress-product-title">Платье А-силуэта «База»</h2>
+            <p class="dress-product-price">390 ₽</p>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 KidsPatterns. Все права защищены.</p>
+      </div>
+    </footer>
+      <script src="cart.js"></script>
+  </body>
+</html>

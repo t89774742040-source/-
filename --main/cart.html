@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Корзина — ЛОРИ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="ЛОРИ" class="logo-image" /></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html#about">О сайте</a></li>
+            <li><a href="index.html#patterns">Выкройки</a></li>
+            <li><a href="index.html#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html" class="header-cart" aria-label="Корзина">
+          <span class="header-cart-icon" aria-hidden="true">🛒</span>
+          <span class="header-cart-count" id="headerCartCount">0</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="cart-page">
+      <div class="container">
+        <p class="product-back"><a href="index.html">← На главную</a></p>
+        <h1 class="product-page-title">Корзина</h1>
+
+        <p class="cart-empty" id="cartEmpty" hidden>Корзина пуста</p>
+        <section class="cart-items" id="cartItems"></section>
+
+        <div class="cart-total">
+          <span>Итого:</span>
+          <strong id="cartTotal">0 ₽</strong>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 KidsPatterns. Все права защищены.</p>
+      </div>
+    </footer>
+    <script src="cart.js"></script>
+  </body>
+</html>
+

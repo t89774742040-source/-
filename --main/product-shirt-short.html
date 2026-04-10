@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рубашка с коротким рукавом — электронная выкройка</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="ЛОРИ" class="logo-image" /></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html#about">О сайте</a></li>
+            <li><a href="index.html#patterns">Выкройки</a></li>
+            <li><a href="index.html#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html" class="header-cart" aria-label="Корзина">
+          <span class="header-cart-icon" aria-hidden="true">🛒</span>
+          <span class="header-cart-count" id="headerCartCount">0</span>
+        </a>      </div>
+    </header>
+
+    <main class="product-page pdp-page">
+      <div class="container">
+        <p class="product-back">
+          <a href="shirts.html">← Назад в каталог «Рубашки»</a>
+        </p>
+
+        <div class="pdp-layout">
+          <div class="pdp-gallery">
+            <div class="pdp-image-frame">
+              <img
+                class="pdp-image"
+                src="images/product-shirt-short.jpg"
+                alt="Рубашка с коротким рукавом — превью выкройки"
+                width="900"
+                height="1200"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          <div class="pdp-buy">
+            <h1 class="pdp-title">Рубашка с коротким рукавом</h1>
+            <p class="pdp-lead">
+              Летний вариант из хлопка. PDF, пошаговая инструкция.
+            </p>
+
+            <div class="pdp-prices">
+              <span class="pdp-price-old" aria-label="Старая цена">490 ₽</span>
+              <span class="pdp-price-current" aria-label="Текущая цена">410 ₽</span>
+            </div>
+
+            <p class="pdp-difficulty"><span>Сложность:</span> лёгкая</p>
+
+            <p class="dress-size-label">Рост, см</p>
+            <div class="dress-size-chips" role="group" aria-label="Выбор роста">
+              <button type="button" class="dress-size-btn" data-size="98">98</button>
+              <button type="button" class="dress-size-btn" data-size="104">104</button>
+              <button type="button" class="dress-size-btn" data-size="110">110</button>
+              <button type="button" class="dress-size-btn" data-size="116">116</button>
+              <button type="button" class="dress-size-btn" data-size="122">122</button>
+              <button type="button" class="dress-size-btn" data-size="128">128</button>
+              <button type="button" class="dress-size-btn" data-size="134">134</button>
+              <button type="button" class="dress-size-btn" data-size="140">140</button>
+              <button type="button" class="dress-size-btn" data-size="146">146</button>
+              <button type="button" class="dress-size-btn" data-size="152">152</button>
+              <button type="button" class="dress-size-btn" data-size="158">158</button>
+            </div>
+
+            <button type="button" class="btn btn-primary pdp-add-btn" id="pdpAddBtn">
+              В корзину
+            </button>
+            <p class="pdp-cart-feedback" id="pdpCartFeedback" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 KidsPatterns. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var CART_KEY = "kidsPatternsCart";
+        var PRODUCT = {
+          id: "shirt-short",
+          title: "Рубашка с коротким рукавом",
+          price: 410,
+          image: "images/product-shirt-short.jpg",
+        };
+
+        var chips = document.querySelectorAll(".pdp-page .dress-size-btn");
+        var addBtn = document.getElementById("pdpAddBtn");
+        var feedback = document.getElementById("pdpCartFeedback");
+        var selectedSize = null;
+        var feedbackTimer = null;
+        var imageForCart = "";
+
+        var pdpImg = document.querySelector(".pdp-image");
+        if (pdpImg) {
+          pdpImg.addEventListener("load", function () {
+            imageForCart = PRODUCT.image;
+          });
+          pdpImg.addEventListener("error", function () {
+            imageForCart = "";
+            pdpImg.remove();
+            var frame = document.querySelector(".pdp-image-frame");
+            if (frame && !frame.querySelector(".pdp-image-placeholder")) {
+              var ph = document.createElement("div");
+              ph.className = "pdp-image-placeholder";
+              ph.setAttribute("aria-hidden", "true");
+              frame.appendChild(ph);
+            }
+          });
+          if (pdpImg.complete && pdpImg.naturalWidth > 0) {
+            imageForCart = PRODUCT.image;
+          }
+        }
+
+        function showFeedback(text, kind) {
+          feedback.textContent = text;
+          feedback.classList.remove("is-error", "is-success");
+          if (kind) feedback.classList.add(kind);
+          clearTimeout(feedbackTimer);
+          if (kind === "is-success") {
+            feedbackTimer = setTimeout(function () {
+              feedback.textContent = "";
+              feedback.classList.remove("is-success");
+            }, 3500);
+          }
+        }
+
+        function getCart() {
+          try {
+            var raw = localStorage.getItem(CART_KEY);
+            var data = raw ? JSON.parse(raw) : [];
+            return Array.isArray(data) ? data : [];
+          } catch (e) {
+            return [];
+          }
+        }
+
+        function saveCart(items) {
+          localStorage.setItem(CART_KEY, JSON.stringify(items));
+          if (window.updateCartCount) window.updateCartCount();
+        }
+
+        chips.forEach(function (chip) {
+          chip.addEventListener("click", function () {
+            chips.forEach(function (c) {
+              c.classList.remove("is-selected");
+              c.setAttribute("aria-pressed", "false");
+            });
+            chip.classList.add("is-selected");
+            chip.setAttribute("aria-pressed", "true");
+            selectedSize = chip.getAttribute("data-size");
+            showFeedback("");
+          });
+        });
+
+        addBtn.addEventListener("click", function () {
+          if (!selectedSize) {
+            showFeedback("Выберите размер", "is-error");
+            return;
+          }
+
+          var item = {
+            lineId: PRODUCT.id + "-" + selectedSize + "-" + Date.now(),
+            productId: PRODUCT.id,
+            title: PRODUCT.title,
+            price: PRODUCT.price,
+            size: selectedSize,
+            image: imageForCart || "",
+          };
+
+          var cart = getCart();
+          cart.push(item);
+          saveCart(cart);
+
+          showFeedback("Товар добавлен в корзину", "is-success");
+        });
+      })();
+    </script>
+      <script src="cart.js"></script>
+  </body>
+</html>
